@@ -5,11 +5,8 @@ usersController.createUser = (req, res, next, err) => {
     const createQuery = `INSERT INTO users (
         username
         password
-    ) VALUES VALUES ($1)`;
-    const {
-        username,
-        password
-    } = req.body;
+    ) VALUES VALUES ($1, $2)`;
+    const { username, password } = req.body;
     db.query(createQuery, ([username, password])
     .then((data) => {
         return next();
