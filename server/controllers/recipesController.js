@@ -26,5 +26,5 @@ ingredientsController.updateRecipe = (req, res, next) => {
 }
 
 ingredientsController.deleteRecipe = (req, res, next) => {
-    
+
 }
