@@ -1,6 +1,6 @@
 {
     "proxy": "http://localhost:3000",
-    "name": "scratch-project",
+    "name": "peekachef",
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
