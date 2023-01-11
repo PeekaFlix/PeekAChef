@@ -8,6 +8,7 @@ recipesController.getAllRecipes = (req, res, next) => {
     .then((data) => {
         console.log(data.rows)
         //store recipe
+        res.locals.recipes = data.rows;
         return next();
     })
     .catch((err) => {

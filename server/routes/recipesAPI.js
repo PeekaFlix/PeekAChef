@@ -4,7 +4,7 @@ const recipesController = require('../controllers/recipesController.js');
 
 /* retrieves user recipe */
 router.get('/getAll', recipesController.getAllRecipes, (req, res) => {
-    return res.status(200).send('yay')
+    return res.status(200).json(res.locals.recipes)
 })
 
 /* creates/adds new recipe */
