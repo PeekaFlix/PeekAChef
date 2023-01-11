@@ -15,7 +15,7 @@ Router.post('/createUser', usersController.createUser, (req, res) => {
 
 /* login into an account || also grabs user recipe list */
 Router.post('/login', usersController.checkLogin, recipesController.getAllRecipes, (req, res) => {
-    return res.status(200).send('login successful')
+    return res.status(200).send(res.locals.recipes)
 })
 
 module.exports = Router;
