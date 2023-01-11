@@ -1,7 +1,7 @@
 const db = require('../pg.js');
 const recipesController = {}
 
-recipesController.getAllRecipes = (req, res, next) => {
+    recipesController.getAllRecipes = (req, res, next) => {
     const { recipe, description, preparation_time, cook_time, serving_size } = req.body;
     const getRecipes = `SELECT * FROM recipes WHERE users_id=$1`;
     db.query(getRecipes, [res.locals.userID])
