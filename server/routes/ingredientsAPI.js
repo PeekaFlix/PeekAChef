@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
-
-const middleware = 'placeholder';
+const ingredientsController = require('../controllers/ingredientsController.js')
 
 /* retrieves ingredients */
 router.get('/getIngredients', (req, res) => {
@@ -9,14 +8,14 @@ router.get('/getIngredients', (req, res) => {
 })
 
 /* creates/adds new ingredients */
-router.post('/addIngredients', (req, res) => {
-    return res.status(200)
+router.post('/addIngredients', ingredientsController.addIngredient, (req, res) => {
+    return res.status(200).send('addedIngredient')
 })
 
 /* updates ingredients */
-router.put('/updateIngredients', (req, res) => {
-    return res.status(200)
-})
+// router.put('/updateIngredients', (req, res) => {
+//     return res.status(200)
+// })
 
 /* delete ingredient */
 router.delete('/deleteRecipe', (req, res) => {
