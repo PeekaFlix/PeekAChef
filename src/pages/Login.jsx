@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { RecipeContext } from '../context/RecipeContext';
 
 function Login() {
   let navigate = useNavigate();
+  const {username, setUsername} = useContext(RecipeContext);
 
   const clickHandler = () => {
     // use querySelectors to retrieve the username and password for authentication

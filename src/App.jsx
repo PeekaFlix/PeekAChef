@@ -5,6 +5,7 @@ import Signup from './pages/Signup';
 import Home from './pages/Home';
 import AddRecipe from './pages/AddRecipe';
 import AddRating from './pages/AddRating';
+import { RecipeContextProvider } from './context/RecipeContext';
 
 function App () {
     //navigate to a requested URL on component mount  //*does not work
@@ -17,13 +18,16 @@ function App () {
     return (
         
             <BrowserRouter>
-                <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                    <ul className="navbar-nav float-end">
-                        <li className="nav-link"><Link to='/home'>Home</Link></li>
-                        <li className="nav-link"><Link to='/signup'>Signup</Link></li>
-                        <li className="nav-link"><Link to='/login'>Login</Link></li>
-                        <li className="nav-link"><Link to='/addrecipe'>Add Recipe</Link></li>
-                    </ul>
+              <RecipeContextProvider>
+                <nav className="navbar navbar-expand-lg bg-light">
+                    <div className="container-fluid">
+                        <ul className="navbar-nav float-end">
+                            <li className="nav-item"><Link to='/home'>Home</Link></li>
+                            <li className="nav-item"><Link to='/signup'>Signup</Link></li>
+                            <li className="nav-item"><Link to='/login'>Login</Link></li>
+                            <li className="nav-item"><Link to='/addrecipe'>Add Recipe</Link></li>
+                        </ul>
+                    </div>
                 </nav>
                 App
                 <Routes>
@@ -34,6 +38,7 @@ function App () {
                     <Route path='/addrating' element={ <AddRating /> } />
                     <Route path='/addrecipe' element={ <AddRecipe /> } />
                 </Routes>
+              </RecipeContextProvider>
             </BrowserRouter>
     )
 }
