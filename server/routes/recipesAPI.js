@@ -13,9 +13,9 @@ router.post('/addRecipe', recipesController.addRecipe, (req, res) => {
 })
 
 /* updates recipe */
-router.put('/updateRecipe', (req, res) => {
-    return res.status(200)
-})
+// router.put('/updateRecipe', (req, res) => {
+//     return res.status(200)
+// })
 
 /* delete recipe */
 router.delete('/deleteRecipe', (req, res) => {
