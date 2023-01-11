@@ -22,8 +22,12 @@ function Signup() {
         .then((res) => res.json())
         .then((data) => {
           // use useNavigate to redirect to login page
-        })
-    })
+          navigate('/');
+          alert('Account successfully created! Please log in!');
+        }).catch(err => {
+            alert('username or password is invalid');
+          })
+     })
   }
 
   return (

@@ -2,9 +2,9 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function Login() {
-  let navigate = useNavigate();
+  // let navigate = useNavigate();
 
-  const clickHandler = () => {
+  const loginClickHandler = () => {
     // use querySelectors to retrieve the username and password for authentication
     const user = document.querySelector('#username').value;
     const pass = document.querySelector('#password').value;
@@ -25,17 +25,22 @@ function Login() {
       .then((res) => res.json())
       .then((data) => {
         // use useNavigate to redirect to home page
+        navigate('/home');
+      }).catch(err => {
+        alert('username or password is invalid; try again or create a new account');
       })
     })
+  }
 
-        return (
-            <div>
-            Login
-            <input type="text" id="username" placeholder="username" required/>
-            <input type="text" id="password" placeholder="password" required/>
-            <button onClick={clickHandler}>Login</button>
-            </div>
-        )
-    }
+    return (
+      <div className="login">
+        <button onClick={() => navigate('/signup')}>Sign-Up</button>
+        Login
+        <input type="text" id="username" placeholder="username" required/>
+        <input type="text" id="password" placeholder="password" required/>
+        <button onClick={loginClickHandler}>Login</button>
+      </div>
+    )
+
 }
 export default Login;
