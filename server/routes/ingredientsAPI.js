@@ -3,8 +3,8 @@ const router = express.Router();
 const ingredientsController = require('../controllers/ingredientsController.js')
 
 /* retrieves ingredients */
-router.get('/getIngredients', (req, res) => {
-    return res.status(200)
+router.post('/getIngredients', ingredientsController.getIngredients, (req, res) => {
+    return res.status(200).json(res.locals.ingredients)
 })
 
 /* creates/adds new ingredients */
