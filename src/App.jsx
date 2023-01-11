@@ -19,6 +19,7 @@ function App () {
         
             <BrowserRouter>
               <RecipeContextProvider>
+                <h1 className='title'> Peek-A-Chef </h1>
                 <nav className="navbar navbar-expand-lg bg-light">
                     <div className="container-fluid">
                         <ul className="navbar-nav float-end">

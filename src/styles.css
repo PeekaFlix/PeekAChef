@@ -2,8 +2,39 @@
   position: absolute;
   top: 0;
   right: 0;
+  padding-right: 6px;
 }
 
 .expandBtn:hover {
   cursor: pointer;
+}
+
+.navbar-nav {
+  display: flex;
+  direction: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.navbar {
+  border: 1px solid #000000;
+}
+
+.nav-item {
+  border: 1px solid #000000;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  background-color: pink;
+}
+
+.card-body {
+  border: 1px solid black;
+  background-color: rgb(255, 224, 231); 
+}
+
+.card {
+  padding: 1px;
 }
