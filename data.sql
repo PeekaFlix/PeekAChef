@@ -30,3 +30,5 @@ CREATE TABLE public.ingredients (
   OIDS=FALSE
 );
 
+ALTER TABLE public.recipes ADD CONSTRAINT "recipes_fk" FOREIGN KEY ("users_id") REFERENCES  public.users("_id");
+ALTER TABLE public.ingredients ADD CONSTRAINT "ingredients_fk" FOREIGN KEY ("recipe_id") REFERENCES  public.recipes("_id");
