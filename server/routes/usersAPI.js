@@ -1,24 +1,21 @@
 const express = require('express');
-const router = express.Router();
-
-const middleware = 'placeholder';
+const Router = express.Router();
+const usersController = require('../controllers/userController.js');
+const recipesController = require('../controllers/recipesController.js');
 
 /* retrieves users recipe */
-router.get('/readUsers', middleware, (req, res) => {
+Router.get('/readUsers', (req, res) => {
     return res.status(200)
 })
 
 /* create an account */
-router.post('/signup', middleware, (req, res) => {
-    return res.status(200)
+Router.post('/createUser', usersController.createUser, (req, res) => {
+    return res.status(200).send('success')
 })
 
-/* update a user */
-router.put('/updateUser', middleware, (req, res) => {
-    return res.status(200)
+/* login into an account || also grabs user recipe list */
+Router.post('/login', usersController.checkLogin, recipesController.getAllRecipes, (req, res) => {
+    return res.status(200).send('login successful')
 })
 
-/* delete a user */
-router.delete('/deleteUser', middleware, (req, res) => {
-    return res.status(200)
-})
+module.exports = Router;
