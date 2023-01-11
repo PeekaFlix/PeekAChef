@@ -1,16 +1,15 @@
 const express = require('express');
 const router = express.Router();
-
-const middleware = 'placeholder';
+const recipesController = require('../controllers/recipesController.js');
 
 /* retrieves user recipe */
-router.get('/getAll', (req, res) => {
-    return res.status(200)
+router.get('/getAll', recipesController.getAllRecipes, (req, res) => {
+    return res.status(200).send('yay')
 })
 
 /* creates/adds new recipe */
-router.post('/addRecipe', (req, res) => {
-    return res.status(200)
+router.post('/addRecipe', recipesController.addRecipe, (req, res) => {
+    return res.status(200).send('successful')
 })
 
 /* updates recipe */

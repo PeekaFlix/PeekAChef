@@ -16,7 +16,7 @@ function Login() {
     };
 
     // POST request
-    fetch('api/login', {
+    fetch('users/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
