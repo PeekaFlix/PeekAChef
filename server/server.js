@@ -25,12 +25,17 @@ app.use('/ingredients', ingredientsRouter)
 /* user router */
 app.use('/users', userRouter)
 
+app.use('/dist', express.static(path.join(__dirname, '../dist')));
+app.get('/', (req, res) => {
+  res.status(200).sendFile(path.resolve(__dirname, '../index.html'));
+});
+
 /* global err handler */
 app.use((err, req, res, next) => {
     const defaultErr = {
         log: 'express error handler caught global err handler',
         status: 500,
-        message: {err: 'an error occured'}
+        message: {err: 'global error handler'}
     }
     const errorObj = Object.assign({}, defaultErr, err);
     return res.status(errorObj.status).json(errorObj.message);
@@ -38,5 +43,6 @@ app.use((err, req, res, next) => {
 
 /* server is running and listening to specific PORT */
 app.listen(PORT, () => {console.log(`listening on port ${PORT}...`)})
+
 
 module.exports = app;

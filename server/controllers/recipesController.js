@@ -1,30 +1,40 @@
+const db = require('../pg.js');
 const recipesController = {}
 
-ingredientsController.getAllRecipes = (req, res, next) => {
-
+recipesController.getAllRecipes = (req, res, next) => {
+    const { recipe, description, preparation_time, cook_time, serving_size } = req.body;
+    const getRecipes = `SELECT * FROM recipes WHERE users_id=$1`;
+    db.query(getRecipes, [res.locals.userID])
+    .then((data) => {
+        console.log(data.rows)
+        //store recipe
+        return next();
+    })
+    .catch((err) => {
+        console.log(`An err has occured in recipesController.getAllRecipes middleware : ${err}`)
+    })
 }
 
-ingredientsController.addRecipe = (req, res, next) => {
+recipesController.addRecipe = (req, res, next) => {
     const createQuery = `INSERT INTO recipes (
+        user_id,
         recipe,
         description,
         preparation_time,
         cook_time,
-        serving_size) VALUES VALUES ($1, $2, $3, $4, $5)`;
-    const { recipe, description, preparation_time, cook_time, serving_size } = req.body;
-    db.query(createQuery, ([recipe, description, preparation_time, cook_time, serving_size])
+        serving_size) VALUES ($1, $2, $3, $4, $5, $6)`;
+    const { users_id, recipe, description, preparation_time, cook_time, serving_size } = req.body;
+    db.query(createQuery, ([users_id, recipe, description, preparation_time, cook_time, serving_size]))
     .then((data) => {
         return next();
     })
     .catch((err) => {
-        console.log(`an err has occured: ${err}`)
+        console.log(`An err has occured in recipesController middleware: ${err}`)
     })
-)}
+}
 
-ingredientsController.updateRecipe = (req, res, next) => {
+recipesController.deleteRecipe = (req, res, next) => {
 
 }
 
-ingredientsController.deleteRecipe = (req, res, next) => {
-    
-}
+module.exports = recipesController;
