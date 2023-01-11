@@ -18,7 +18,7 @@ recipesController.getAllRecipes = (req, res, next) => {
 
 recipesController.addRecipe = (req, res, next) => {
     const createQuery = `INSERT INTO recipes (
-        user_id,
+        users_id,
         recipe,
         description,
         preparation_time,

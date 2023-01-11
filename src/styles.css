@@ -1,0 +1,9 @@
+.expandBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.expandBtn:hover {
+  cursor: pointer;
+}
