@@ -22,10 +22,10 @@ function AddRecipe() {
   function handleSubmit(e){
 
     e.preventDefault();
-    
     const postRecipe = async () => {
       try {
-      const response = await axios('http://localhost:3000/api/addRecipe', {
+      const response = await axios.post('http://localhost:3000/api/addRecipe', {
+
           data: 
           {
             recipe,
@@ -35,6 +35,7 @@ function AddRecipe() {
             serving_size,
             recipe_id,
             //name is ingredient list
+
             name,
             amount
           } 
@@ -73,6 +74,7 @@ function AddRecipe() {
                 Preparation Time:   <input type="text" value={preparation_time} onChange={e=> setPreparation_time(e.target.value)} className="form-control" placeholder=""/>
                 </div>
                 <div className="input-group mb-3">
+
                 Cook Time:   <input type="text" value={cook_time} onChange={e=> setPreparation_time(e.target.value)} className="form-control" placeholder=""/>
                 </div>
                 <div className="input-group mb-3">
@@ -80,6 +82,7 @@ function AddRecipe() {
                 </div>
                 <div className="input-group mb-3">
                 Ingredients:   <input type="text" value={serving_size} onChange={e=> setPreparation_time(e.target.value)} className="form-control" placeholder=""/>
+
                 </div>
                 
                 Ingredients:  
