@@ -20,7 +20,9 @@ function Home() {
   return (
     <div>
     Home
+
   <div>{JSON.stringify(recipes)}</div>
+
     <div className="card text-center ms-4" style={{ width: '18rem' }}>
       <div className="card-body">
         <h5 className="card-title">Special title treatment</h5>

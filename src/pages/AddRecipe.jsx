@@ -20,10 +20,12 @@ function AddRecipe() {
   const [ingredients, setIngredients] = useState(2);
 
   function handleSubmit(e){
+
     e.preventDefault();
     const postRecipe = async () => {
       try {
       const response = await axios.post('http://localhost:3000/api/addRecipe', {
+
           data: 
           {
             recipe,
@@ -33,8 +35,9 @@ function AddRecipe() {
             serving_size,
             recipe_id,
             //name is ingredient list
-            // name,
-            // amount
+
+            name,
+            amount
           } 
         })
         addRecipe(response.data.recipes)
@@ -71,13 +74,15 @@ function AddRecipe() {
                 Preparation Time:   <input type="text" value={preparation_time} onChange={e=> setPreparation_time(e.target.value)} className="form-control" placeholder=""/>
                 </div>
                 <div className="input-group mb-3">
-                Cook Time:   <input type="text" value={cook_time} onChange={e=> setCook_time(e.target.value)} className="form-control" placeholder=""/>
+
+                Cook Time:   <input type="text" value={cook_time} onChange={e=> setPreparation_time(e.target.value)} className="form-control" placeholder=""/>
                 </div>
                 <div className="input-group mb-3">
-                Serving Size:   <input type="text" value={serving_size} onChange={e=> setServing_size(e.target.value)} className="form-control" placeholder=""/>
+                Serving Size:   <input type="text" value={serving_size} onChange={e=> setPreparation_time(e.target.value)} className="form-control" placeholder=""/>
                 </div>
                 <div className="input-group mb-3">
-                Ingredients:   <input type="text" value={ingredients} onChange={e=> setIngredients(e.target.value)} className="form-control" placeholder=""/>
+                Ingredients:   <input type="text" value={serving_size} onChange={e=> setPreparation_time(e.target.value)} className="form-control" placeholder=""/>
+
                 </div>
                 
                 Ingredients:  
