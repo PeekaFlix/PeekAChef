@@ -18,7 +18,7 @@ router.post('/addIngredients', ingredientsController.addIngredient, (req, res) =
 // })
 
 /* delete ingredient */
-router.delete('/deleteRecipe', (req, res) => {
+router.delete('/deleteIngredient', (req, res) => {
     return res.status(200)
 })
 

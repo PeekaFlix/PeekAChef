@@ -18,12 +18,13 @@ function Login() {
     };
 
     // POST request
-    fetch('users/login', {
+    fetch('/users/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(reqBody)
+    })
       .then((res) => res.json())
       .then((data) => {
         // use useNavigate to redirect to home page
@@ -31,7 +32,6 @@ function Login() {
       }).catch(err => {
         alert('username or password is invalid; try again or create a new account');
       })
-    })
   }
 
     return (

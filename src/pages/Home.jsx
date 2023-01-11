@@ -9,7 +9,7 @@ function Home() {
   useEffect(()=> {
     const getRecipes = async () => {
       try { 
-        const result = await axios("http://localhost:3000/api/getAll")
+        const result = await axios("http://localhost:3001/recipes/getAll")
       setRecipes(result.data.recipes)   
       getRecipes()
     } catch(err){}

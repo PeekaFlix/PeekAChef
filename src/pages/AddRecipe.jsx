@@ -24,7 +24,7 @@ function AddRecipe() {
     e.preventDefault();
     const postRecipe = async () => {
       try {
-      const response = await axios.post('http://localhost:3000/api/addRecipe', {
+      const response = await axios.post('http://localhost:3001/recipes/addRecipe', {
 
           data: 
           {

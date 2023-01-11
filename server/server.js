@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const app = express();
-const PORT = 3000;
+const PORT = 3001;
 
 /* imports ingredients/recipes/users routers) */
 const recipeRouter = require('./routes/recipesAPI.js');

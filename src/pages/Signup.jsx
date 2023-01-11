@@ -13,7 +13,7 @@ function Signup() {
     }
 
     // POST request
-    fetch('api/login', {
+    fetch('/users/createUser', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
