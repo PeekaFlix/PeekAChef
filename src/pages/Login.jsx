@@ -42,8 +42,6 @@ function Login() {
 
     return (
       <div className="login">
-        <button onClick={() => navigate('/signup')}>Sign-Up</button>
-        Login
         <input type="text" id="username" placeholder="username" required/>
         <input type="password" id="password" placeholder="password" required/>
         <button onClick={loginClickHandler}>Login</button>
