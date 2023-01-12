@@ -19,13 +19,14 @@ function App () {
         
             <BrowserRouter>
               <RecipeContextProvider>
+                <h1 className='title'> Peek-A-Chef </h1>
                 <nav className="navbar navbar-expand-lg bg-light">
                     <div className="container-fluid">
                         <ul className="navbar-nav float-end">
-                            <li className="nav-item"><Link to='/home'>Home</Link></li>
-                            <li className="nav-item"><Link to='/signup'>Signup</Link></li>
-                            <li className="nav-item"><Link to='/login'>Login</Link></li>
-                            <li className="nav-item"><Link to='/addrecipe'>Add Recipe</Link></li>
+                            <li className="nav-item"><Link to='/home' class="text-decoration-none">Home</Link></li>
+                            <li className="nav-item"><Link to='/signup' class="text-decoration-none">Signup</Link></li>
+                            <li className="nav-item"><Link to='/login' class="text-decoration-none">Login</Link></li>
+                            <li className="nav-item"><Link to='/addrecipe' class="text-decoration-none">Add Recipe</Link></li>
                         </ul>
                     </div>
                 </nav>

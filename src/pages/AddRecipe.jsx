@@ -133,7 +133,7 @@ function AddRecipe() {
                 <button className="btn btn-outline-primary" type="button" onClick={() => setIngredients(ingredients + 1)}>Add Option</button>
                 <hr className="border border-primary" />
 
-                <button type="submit" className="btn
+                <button onClick={handleSubmit} type="submit" className="submit-btn
                  ">Submit</button>
             </div>
         </form>

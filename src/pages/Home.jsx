@@ -34,7 +34,6 @@ function Home() {
 
   return (
     <div>
-    Home
 
     {cards}
     

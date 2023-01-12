@@ -19,6 +19,7 @@ function Signup() {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(reqBody)
+    })
         .then((res) => res.json())
         .then((data) => {
           // use useNavigate to redirect to login page
@@ -27,14 +28,12 @@ function Signup() {
         }).catch(err => {
             alert('username or password is invalid');
           })
-     })
   }
 
   return (
     <div className="signup">
-      Signup
       <input type="text" id="newUsername" placeholder="username" required/>
-      <input type="text" id="newPw" placeholder="password" required/>
+      <input type="password" id="newPw" placeholder="password" required/>
       <button onClick={clickHandler}>Sign Up</button>
     </div>
   )
