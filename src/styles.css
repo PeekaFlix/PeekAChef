@@ -27,7 +27,15 @@
   padding-top: 10px;
   padding-bottom: 10px;
   border-radius: 10px;
-  background-color: pink;
+  background-color: #CFE3E2;  
+}
+
+.nav-item:Link {
+  text-decoration: none;
+}
+
+.nav-item:hover {
+  text-decoration: none;
 }
 
 .card-body {
@@ -61,4 +69,18 @@
   width: 200px;
   margin: 0 auto;
   display: block;
+}
+
+.signup {
+  border: 1px solid #000000;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  background-color: pink;  
+}
+
+.login {
+  padding-top: 2px;
 }

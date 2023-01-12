@@ -32,7 +32,6 @@ function Signup() {
 
   return (
     <div className="signup">
-      Signup
       <input type="text" id="newUsername" placeholder="username" required/>
       <input type="password" id="newPw" placeholder="password" required/>
       <button onClick={clickHandler}>Sign Up</button>
