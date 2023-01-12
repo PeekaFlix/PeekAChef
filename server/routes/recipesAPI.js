@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const recipesController = require('../controllers/recipesController.js');
+const ingredientsController = require('../controllers/ingredientsController.js');
 
 /* retrieves user recipe */
 router.get('/getAll', recipesController.getAllRecipes, (req, res) => {
@@ -8,7 +9,7 @@ router.get('/getAll', recipesController.getAllRecipes, (req, res) => {
 })
 
 /* creates/adds new recipe */
-router.post('/addRecipe', recipesController.addRecipe, (req, res) => {
+router.post('/addRecipe', recipesController.addRecipe, ingredientsController.addIngredient, (req, res) => {
     return res.status(200).send('successful')
 })
 

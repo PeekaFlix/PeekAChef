@@ -17,22 +17,27 @@ ingredientsController.getIngredients = (req, res, next) => {
 }
 
 ingredientsController.addIngredient = (req, res, next) => {
+    const checkQuery = `SELECT * FROM recipes WHERE recipe=$1`
     const createQuery = `INSERT INTO ingredients (
         recipe_id,
         name,
         amount) VALUES ($1, $2, $3)`;
-    const { name, amount, recipe_id } = req.body;
-    db.query(createQuery, [recipe_id, name, amount])
-    .then((data) => {
-        return next();
-    })
-    .catch((err) => {
-        console.log(`An err has occured in ingredientsController.addIngredients middleware:${err}`)
-    })
-}
-
-ingredientsController.deleteIngredient = (req, res, next) => {
+    const { ingredientsObj, amount, users_id } = req.body;
+    for (const key in ingredientsObj) {
+      console.log(ingredientsObj[key].ingredient)
+      // db.query(checkQuery, [recipe]) 
+      // .then((data) => {
+      //   console.log(data.rows);
+      // })
+      // .catch((err) => {
+      //   console.log(`An err has occured in ingredientsController.addIngredients middleware:${err}`)
+      // })
+    }
     
 }
+
+// ingredientsController.deleteIngredient = (req, res, next) => {
+    
+// }
 
 module.exports = ingredientsController;
