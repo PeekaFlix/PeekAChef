@@ -12,6 +12,10 @@ module.exports = {
       template: path.join(__dirname, './index.html'),
     }),
   ],
+  resolve: {
+    // Enable importing JS / JSX files without specifying their extension
+    extensions: ['.js', '.jsx'],
+  },
   module: {
     rules: [
       {
@@ -26,6 +30,7 @@ module.exports = {
       },
       {
         test: /\.css$/i,
+        exclude: /node_modules/,
         use: ['style-loader', 'css-loader'],
       },
     ],
@@ -41,7 +46,7 @@ module.exports = {
       publicPath: '/',
     },
     proxy: {
-      '/api': 'http://localhost:3000',
+      '/': 'http://localhost:3001',
     },
   },
 };

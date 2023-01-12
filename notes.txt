@@ -1,0 +1,3 @@
+
+* command for making the sql tables
+psql -d <url from elephantSQL> -f starwars_postgres_create.sql
