@@ -62,7 +62,7 @@ function AddRecipe() {
 
   return (
     <div className="mb-4  ms-4">
-        <form action="">
+        <form className="form" action="">
             <div className="form-row row mb-3">
                 <div className="input-group mb-3">
                    Recipe Name:  <input type="text" value={recipe} onChange={e=> setRecipe(e.target.value)} className="form-control" placeholder=""/>
@@ -90,7 +90,7 @@ function AddRecipe() {
                 <button className="btn btn-outline-info" type="button" onClick={() => setIngredients(ingredients + 1)}>Add Option</button>
                 <hr className="border border-info" />
 
-                <button onClick={handleSubmit} type="submit" className="btn
+                <button onClick={handleSubmit} type="submit" className="submit-btn
                  ">Submit</button>
             </div>
         </form>
