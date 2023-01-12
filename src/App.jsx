@@ -29,7 +29,6 @@ function App () {
                         </ul>
                     </div>
                 </nav>
-                App
                 <Routes>
                     <Route path='/' element={ <Login /> } />
                     <Route path='/signup' element={ <Signup /> } />

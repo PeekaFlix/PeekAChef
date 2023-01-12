@@ -22,7 +22,7 @@ function Recipes(props) {
         .then((data) => {
           setIngredients(data);
         }).catch(err => {
-          alert('username or password is invalid; try again or create a new account');
+          console.log(err)
         })
   }, [])
 

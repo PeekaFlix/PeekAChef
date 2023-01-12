@@ -25,6 +25,7 @@ recipesController.addRecipe = (req, res, next) => {
         cook_time,
         serving_size) VALUES ($1, $2, $3, $4, $5, $6)`;
     const { users_id, recipe, description, preparation_time, cook_time, serving_size } = req.body;
+    console.log(req.body)
     db.query(createQuery, ([users_id, recipe, description, preparation_time, cook_time, serving_size]))
     .then((data) => {
         return next();
@@ -33,6 +34,25 @@ recipesController.addRecipe = (req, res, next) => {
         console.log(`An err has occured in recipesController middleware: ${err}`)
     })
 }
+
+// recipesController.addRecipe = (req, res, next) => {
+//   console.log(req.body);
+//     const createQuery = `INSERT INTO recipes (
+//         users_id,
+//         recipe,
+//         description,
+//         preparation_time,
+//         cook_time,
+//         serving_size) VALUES ($1, $2, $3, $4, $5, $6)`;
+//     const { users_id, recipe, description, preparation_time, cook_time, serving_size } = req.body;
+//     db.query(createQuery, ([users_id, recipe, description, preparation_time, cook_time, serving_size]))
+//     .then((data) => {
+//         return next();
+//     })
+//     .catch((err) => {
+//         console.log(`An err has occured in recipesController middleware: ${err}`)
+//     })
+// }
 
 recipesController.deleteRecipe = (req, res, next) => {
 
